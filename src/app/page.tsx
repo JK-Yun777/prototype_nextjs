@@ -1,95 +1,81 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import dynamic from "next/dynamic";
 
-export default function Home() {
+import styles from "./page.module.css";
+import MainHeader from "@/components/templates/Header/Main.header";
+import MainBottomTap from "@/components/templates/Bottom/Main.bottom.tap";
+
+const DynamicMainBanner = dynamic(
+  /* @ts-expect-error Async Server Component */
+  () => import("@/components/templates/Banner/Main.banner"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+
+const DynamicForYou = dynamic(
+  /* @ts-expect-error Async Server Component */
+  () => import("@/components/templates/Foryou/For.you"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+
+const DynamicHotPlace = dynamic(
+  /* @ts-expect-error Async Server Component */
+  () => import("@/components/templates/Hotplace/Hot.place"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+
+const DynamicSuwonNow = dynamic(
+  /* @ts-expect-error Async Server Component */
+  () => import("@/components/templates/Suwonnow/Suwon.now"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
+
+const Home = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <MainHeader temp={""} newAlarm={true} />
+      </header>
+
+      <div className={styles.main_banner}>
+        <DynamicMainBanner />
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={styles.for_you}>
+        <strong className={styles.for_you_text}>For You</strong>
+        <DynamicForYou />
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className={styles.hot_place}>
+        <strong className={styles.hot_place_text}>Hot Place</strong>
+        <p className={styles.hot_place_sub}>추천 방문지 Best 10</p>
+        <DynamicHotPlace />
       </div>
-    </main>
-  )
-}
+
+      <div className={styles.suwon_now}>
+        <DynamicSuwonNow />
+      </div>
+
+      <div className={styles.for_you}>
+        <strong className={styles.for_you_text}>For You</strong>
+        <DynamicForYou />
+      </div>
+
+      <div className={styles.for_you}>
+        <strong className={styles.for_you_text}>For You</strong>
+        <DynamicForYou />
+      </div>
+
+      <MainBottomTap />
+    </div>
+  );
+};
+
+export default Home;

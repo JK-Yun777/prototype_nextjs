@@ -1,0 +1,99 @@
+.contaner {
+  position: relative;
+  padding-top: 65px;
+}
+
+.place_container {
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  white-space: nowrap;
+  gap: 25px;
+  padding: 40px 40px 40px 0;
+}
+
+/* Chrome, Safari, Opera*/
+.place_container::-webkit-scrollbar {
+  display: none;
+}
+
+.imgContainer {
+  position: relative;
+}
+
+.img {
+  position: relative;
+  width: calc(100vw - 80px);
+  height: calc(100vw - 80px);
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 15px;
+  text-align: right;
+  color: #999;
+}
+
+.poi_name_container {
+  width: 180px;
+  text-align: left;
+}
+
+.poi_name {
+  font-family: ONEMobile !important;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.05em;
+  color: #111111;
+}
+
+.view_container {
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  font-size: 13px;
+}
+
+.view {
+  margin-right: 5px;
+}
+
+.lank_container {
+  position: relative;
+  z-index: 100;
+}
+
+.lank {
+  position: absolute;
+  top: -34px;
+  right: 22px;
+  width: 68px;
+  height: 77px;
+  padding-top: 18px;
+  background: url("../../../assets//img/ico_quotes.png") 50% 50% no-repeat;
+  background-size: 68px 77px;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.debussy {
+  display: block;
+  margin-top: 3px;
+  font-size: 20px;
+}

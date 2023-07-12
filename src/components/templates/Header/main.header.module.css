@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.weather_container {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+.text {
+  font-size: 15px;
+  font-weight: bold;
+}
+.weather {
+  padding-top: 4px;
+  margin-right: -10px;
+}
+
+.arrowRight {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 2px;
+  margin-bottom: 5px;
+}
+
+.alarm_container {
+  display: flex;
+}
+
+.mint_circle {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-top: 2px;
+  background-color: #00cece;
+}

@@ -1,0 +1,67 @@
+.container {
+  padding-top: 15px;
+}
+
+.text {
+  font-family: ONEMobileBold;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.05em;
+  color: #111111;
+  margin-top: 15px;
+}
+
+.course_text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80px;
+  height: 48px;
+  padding-top: 12px;
+  font-size: 13px;
+  overflow: visible;
+  font-family: "NanumSquareRound", sans-serif;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  text-align: center;
+}
+
+.coruses_container {
+  display: flex;
+  overflow-x: scroll;
+  white-space: nowrap;
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.course {
+}
+
+.etc_course {
+  display: flex;
+  gap: 25px;
+}
+
+.coruses_container::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 4px;
+}
+
+.coruses_container::-webkit-scrollbar-thumb {
+  background-color: #00cece;
+}
+
+.imgContainer {
+  width: 83px;
+  height: 78px;
+  border-radius: 60px 60px 0px 0px;
+  overflow: hidden;
+}
+
+.img {
+  width: 83px;
+  height: 78px;
+  object-fit: cover;
+}
